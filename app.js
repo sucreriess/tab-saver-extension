@@ -3,7 +3,7 @@ let myTabs = []
 const inputEl = document.getElementById("input-text")
 const inputBtn = document.getElementById("save")
 const ulEl = document.getElementById("uo-list")
-
+const tabBtn = document.getElementById("tabs")
 const delBtn = document.getElementById("delete")
 
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myleads"))
@@ -26,7 +26,8 @@ inputBtn.addEventListener("click", function(){
     ele()
 }) 
 
-
+tabBtn.addEventListener("click", function(){
+})
 
 function ele(leads){
     let eleArr = ""
