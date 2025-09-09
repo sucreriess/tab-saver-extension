@@ -6,11 +6,11 @@ const ulEl = document.getElementById("uo-list")
 
 const delBtn = document.getElementById("delete")
 
-const leadsFromLocalStorage = JSON.parse(localStorage.getItem("my Tabs"))
+const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myleads"))
 console.log(leadsFromLocalStorage)
 if(leadsFromLocalStorage){
-    myTabs.push(leadsFromLocalStorage)
-    ele()  
+    leads =leadsFromLocalStorage
+    ele(leads)
 }
 
 delBtn.addEventListener("dblclick", function(){
@@ -22,19 +22,19 @@ delBtn.addEventListener("dblclick", function(){
 inputBtn.addEventListener("click", function(){
     myTabs.push(inputEl.value)
     inputEl.value = "" 
-    localStorage.setItem("my Tabs", JSON.stringify(myTabs))
+    localStorage.setItem("myleads", JSON.stringify(myTabs))
     ele()
 }) 
 
 
 
-function ele(){
+function ele(leads){
     let eleArr = ""
-    for( let i =0; i <myTabs.length ; i++){
+    for( let i =0; i <leads.length ; i++){
        eleArr +=`
             <li>
-                <a target = '_blank' href= '${myTabs[i]}'>
-                    ${myTabs[i]}
+                <a target = '_blank' href= '${leads[i]}'>
+                    ${leads[i]}
                 </a>
             </li>`
     }
